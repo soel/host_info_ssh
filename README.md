@@ -1,4 +1,4 @@
-# HostInfoSsh
+# Host_Info_Ssh
 
 ## これは何?
 host へ ssh で接続し、情報取得コマンドを実行して出力します。
@@ -8,14 +8,16 @@ host へ ssh で接続し、情報取得コマンドを実行して出力しま�
 - 追加のソフトウェアを使うことなく、情報取得が可能です。
 
 ## インストール
+あらかじめ ruby のインストールが必要です
 
-    $ git clone
-    $ cd
-    $ bundle
+    $ gem install bundler
+    $ git clone 
+    $ cd host_info_ssh
+    $ bundle install
 
 ## 使い方
 
-    $ ./bin/host_ssh -h <hostname or ip address> -u <username> -f <output_filename>
+    $ bundle exec ruby bin/host_ssh -h <hostname or ip address> -u <username> -f <output_filename>
 
 ## Contributing
 

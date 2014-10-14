@@ -1,5 +1,3 @@
+require "host_info_ssh/command"
 require "host_info_ssh/version"
 
-module HostInfoSsh
-  # Your code goes here...
-end
