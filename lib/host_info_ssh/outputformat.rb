@@ -4,14 +4,17 @@ module HostInfoSsh
   
   module Outputformat
     
-    n = 0
-    def self.markdown(host, command_list, info_list)
-      output << "# #{host}"
-      command_list.each do |command|
-        output << "## #{command}\n"
-        output << info_list[n]
-        n = n + 1
+    def self.markdown(host, info_list)
+      output = "# #{host}\n"
+      info_list.each do |list|
+        if /^command:/ =~ list
+          output << list.sub(/^command:/, "##")
+        else
+          output << list
+        end 
       end
+      
+      return output
     end
   end
 end

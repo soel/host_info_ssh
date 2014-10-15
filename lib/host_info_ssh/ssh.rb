@@ -8,20 +8,26 @@ module HostInfoSsh
 
     def self.connect_ssh(host, user, command_list)
       stdout_list = []
-      stderr = ""
+      stderr_list = ["error:"]
       
       Net::SSH.start(host, user) do |ssh|
         command_list.each do |command|
           ssh.exec!(command) do |channel, stream, data|
-            std_tmp = ""
-            std_tmp << data if stream == :stdout
-            stdout_list.push(std_tmp)
+            stdout = "command: #{command}"
+            stderr = ""
+            stdout << data if stream == :stdout
             stderr << data if stream == :stderr
+            if stderr == "" 
+                stdout_list.push(stdout)
+            else
+                stdout_list.push("")
+                stderr_list.push(stderr)
+            end
           end
         end
       end
-      
-      return stdout_list, stderr
+ 
+      return stdout_list, stderr_list
     end
   end
 end
