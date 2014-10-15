@@ -5,11 +5,11 @@ require "net/ssh"
 module HostInfoSsh
   
   module Ssh
-    
-    stdout_list = []
-    stderr = ""
-    
+
     def self.connect_ssh(host, user, command_list)
+      stdout_list = []
+      stderr = ""
+      
       Net::SSH.start(host, user) do |ssh|
         command_list.each do |command|
           ssh.exec!(command) do |channel, stream, data|
@@ -20,6 +20,8 @@ module HostInfoSsh
           end
         end
       end
+      
+      return stdout_list, stderr
     end
   end
 end

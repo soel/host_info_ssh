@@ -1,0 +1,4 @@
+hostname
+uname -a
+cat /etc/sysconfig/network-scripts/ifcfg-eth0
+cat /etc/sysconfig/network-scripts/ifcfg-eth1
