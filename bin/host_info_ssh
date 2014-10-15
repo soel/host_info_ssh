@@ -1,3 +1,5 @@
 #!/usr/bin/env ruby
 
 require 'host_info_ssh'
+
+HostInfoSsh::Command.run(ARGV)
