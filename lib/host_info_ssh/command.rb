@@ -32,8 +32,8 @@ module HostInfoSsh
       #p host_info
       #p err_info
       output = Outputformat.markdown(options[:nodename], host_info, err_info)
-      #puts output
-      p output_file
+      #p output
+      #p output_file
       Fileout.output_file(output_file, output)
     end
   end

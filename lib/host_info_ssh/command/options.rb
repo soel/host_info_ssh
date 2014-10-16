@@ -17,8 +17,8 @@ module HostInfoSsh
           end
           opt.on('-n NODENAME', '--nodename', 'hostname or ipaddress') {|v| options[:nodename] = v}
           opt.on('-u USERNAME', '--username', 'username') {|v| options[:username] = v}
-          opt.on('-c COMMANDFILENAME', '--commandfile', 'commandfilename') {|v| options[:commandfile] = v}
-          opt.on('-o OUTPUTFILENAME', '--outputfile', 'outputfilename') {|v| options[:outputfile] = v}
+          opt.on('-c COMMANDLIST', '--commandfile', 'commandfilelistname') {|v| options[:commandfile] = v}
+          opt.on('-o OUTPUTFILE', '--outputfile', 'outputfilename') {|v| options[:outputfile] = v}
           begin
             opt.parse!
           rescue => e #定義されていないオプションが指定された時の処理
