@@ -17,7 +17,7 @@ host へ ssh で接続し、情報取得コマンドを実行して出力しま�
 
 ## 使い方
 
-    $ bundle exec ruby bin/host_ssh -h <hostname or ip address> -u <username> -f <output_filename>
+    $ bundle exec ruby bin/host_ssh -h <host_name or ip_address> -u <user_name> -f <output_filename>
 
 ## Contributing
 

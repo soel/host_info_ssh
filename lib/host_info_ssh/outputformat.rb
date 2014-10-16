@@ -4,7 +4,7 @@ module HostInfoSsh
   
   module Outputformat
     
-    def self.markdown(host, info_list)
+    def self.markdown(host, info_list, err_list)
       output = "# #{host}\n"
       info_list.each do |list|
         if /^command:/ =~ list
@@ -12,6 +12,10 @@ module HostInfoSsh
         else
           output << list
         end 
+      end
+      
+      err_list.each do |list|
+        output << list
       end
       
       return output
