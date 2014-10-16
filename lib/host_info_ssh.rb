@@ -1,4 +1,5 @@
 require "host_info_ssh/command"
+require "host_info_ssh/command/options"
 require "host_info_ssh/version"
 require "host_info_ssh/ssh"
 require "host_info_ssh/fileout"
