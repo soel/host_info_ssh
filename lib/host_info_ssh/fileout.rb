@@ -6,7 +6,7 @@ module HostInfoSsh
     
     def self.output_file(file_path, output_data)
       File.open file_path, 'w' do |f|
-        f.write oputput_data
+        f.write output_data
       end
     end
   end

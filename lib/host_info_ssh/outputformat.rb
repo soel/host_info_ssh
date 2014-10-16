@@ -14,6 +14,7 @@ module HostInfoSsh
         end 
       end
       
+      output << "## errors\n"
       err_list.each do |list|
         output << list
       end
