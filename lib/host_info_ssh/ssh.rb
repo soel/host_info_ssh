@@ -7,7 +7,7 @@ module HostInfoSsh
   
   module Ssh
 
-    def self.connect_ssh(host, user, command_list, identity_file)
+    def self.connect_ssh(host, user, command_list, identity_file, password)
       begin
         stdout_list = []
         stderr_list = ["error:"]
@@ -15,6 +15,10 @@ module HostInfoSsh
         if identity_file
           opt = {
             :keys => identity_file
+          }
+        elsif password
+          opt = {
+            :password => password
           }
         else
           opt ={}

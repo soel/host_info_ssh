@@ -20,6 +20,7 @@ module HostInfoSsh
           opt.on('-c COMMANDLIST', '--commandfile', 'commandlist_filename') {|v| options[:commandfile] = v}
           opt.on('-o OUTPUTFILE', '--outputfile', 'output_filename') {|v| options[:outputfile] = v}
           opt.on('-i SSHIDENTITYFILE', '--identityfile', 'ssh_identity_file') {|v| options[:identity] = v}
+          opt.on('-p PASSWORD', '--password', 'password') {|v| options[:password] = v}
           begin
             opt.parse!
           rescue => e #定義されていないオプションが指定された時の処理
