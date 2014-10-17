@@ -60,7 +60,7 @@ NM_CONTROLLED="yes"
 ONBOOT="yes"  
 TYPE="Ethernet"  
 ## errors
-error:cat: /etc/sysconfig/network-scripts/ifcfg-eth1: \u305d\u306e\u3088\u3046\u306a\u30d5\u30a1\u30a4\u30eb\u3084\u30c7\u30a3\u30ec\u30af\u30c8\u30ea\u306f\u3042\u308a\u307e\u305b\u3093
+error:cat: /etc/sysconfig/network-scripts/ifcfg-eth1: そのようなファイルやディレクトリはありません
 ```
 
 ## Contributing
