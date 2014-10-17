@@ -15,10 +15,11 @@ module HostInfoSsh
             puts opt.ver
             exit
           end
-          opt.on('-n NODENAME', '--nodename', 'hostname or ipaddress') {|v| options[:nodename] = v}
-          opt.on('-u USERNAME', '--username', 'username') {|v| options[:username] = v}
-          opt.on('-c COMMANDLIST', '--commandfile', 'commandfilelistname') {|v| options[:commandfile] = v}
-          opt.on('-o OUTPUTFILE', '--outputfile', 'outputfilename') {|v| options[:outputfile] = v}
+          opt.on('-n NODENAME', '--nodename', 'host_name or ip_address') {|v| options[:nodename] = v}
+          opt.on('-u USERNAME', '--username', 'user_name') {|v| options[:username] = v}
+          opt.on('-c COMMANDLIST', '--commandfile', 'commandlist_filename') {|v| options[:commandfile] = v}
+          opt.on('-o OUTPUTFILE', '--outputfile', 'output_filename') {|v| options[:outputfile] = v}
+          opt.on('-i SSHIDENTITYFILE', '--identityfile', 'ssh_identity_file') {|v| options[:identity] = v}
           begin
             opt.parse!
           rescue => e #定義されていないオプションが指定された時の処理

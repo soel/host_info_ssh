@@ -28,7 +28,8 @@ module HostInfoSsh
       end
       
       command_list = FileOpen.read_file(command_list_file)
-      host_info, err_info = Ssh.connect_ssh(options[:nodename], options[:username], command_list)
+      host_info, err_info = Ssh.connect_ssh(options[:nodename], options[:username], command_list,
+        options[:identity])
       #p host_info
       #p err_info
       output = Outputformat.markdown(options[:nodename], host_info, err_info)

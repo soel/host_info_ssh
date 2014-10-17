@@ -7,14 +7,23 @@ module HostInfoSsh
   
   module Ssh
 
-    def self.connect_ssh(host, user, command_list)
+    def self.connect_ssh(host, user, command_list, identity_file)
       begin
         stdout_list = []
         stderr_list = ["error:"]
         
-        Timeout::timeout(5) do
+        if identity_file
+          opt = {
+            :keys => identity_file
+          }
+        else
+          opt ={}
+        end
+        
+        Timeout::timeout(10) do
           begin
-            Net::SSH.start(host, user) do |ssh|
+            #Net::SSH.start(host, user, :keys => [identity_file] if indentity_file) do |ssh|
+            Net::SSH.start(host, user, opt) do |ssh|
               command_list.each do |command|
                 ssh.exec!(command) do |channel, stream, data|
                   stdout = "command: #{command}"
