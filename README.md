@@ -17,7 +17,7 @@ host へ ssh で接続し、情報取得コマンドを実行して出力しま�
 
 ## 使い方
 
-    $ bundle exec ruby bin/host_ssh -n <host_name or ip_address> -u <user_name>
+    $ bundle exec ruby bin/host_info_ssh -n <host_name or ip_address> -u <user_name>
 
 実行すると指定したホストへ接続し lib/host_info_ssh/command_list.txt に記述されたコマンドを実行し、  
 host_info_ssh ディレクトリに <hostname or ip_address>.md というファイルが作成され、
